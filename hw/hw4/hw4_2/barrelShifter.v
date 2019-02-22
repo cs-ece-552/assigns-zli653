@@ -50,7 +50,6 @@ module barrelShifter (In, Cnt, Op, Out);
    assign barr8 = Cnt[2] ? (Op[1] ? rght_out_4 : left_out_4) : barr4;
    // output
    assign Out = Cnt[3] ? (Op[1] ? rght_out_8 : left_out_8) : barr8;
-   
    // mux4_1_16b bit2_in_sel(.InA(In), .InB(In), .InC(left_out_1),. InD(rght_out_1), .S({Cnt[0],Op[1]}), .Out(barr2));
    // mux4_1_16b bit4_in_sel(.InA(barr2), .InB(barr2), .InC(left_out_2),. InD(rght_out_2), .S({Cnt[1],Op[1]}), .Out(barr4));
    // mux4_1_16b bit8_in_sel(.InA(barr4), .InB(barr4), .InC(left_out_4),. InD(rght_out_4), .S({Cnt[2],Op[1]}), .Out(barr8));
